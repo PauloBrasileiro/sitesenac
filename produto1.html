@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        
+        .header {
+            background-color: #2f0038;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+       
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-image {
+            width: 40%;
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-details {
+            width: 50%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-details h2 {
+            color: #2f0038;
+            font-size: 2em;
+        }
+
+        .product-description {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .product-price {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .product-contact {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .product-contact p {
+            margin: 5px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2f0038;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .back-button:hover {
+            background-color: #4a005a;
+        }
+
+        
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-image, .product-details {
+                width: 80%;
+            }
+        }
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #25d366; 
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; 
+        }
+
+        .whatsapp-button img {
+            width: 25px;
+            margin-right: 10px;
+        }
+        .user-box {
+position: absolute;
+top: 20px;
+right: 20px;
+background-color: #2f0038;
+color: white;
+padding: 10px;
+border-radius: 5px;
+font-size: 1.1em;
+display: flex;
+align-items: center;
+}
+
+.user-box a {
+color: white;
+text-decoration: none;
+margin-left: 10px;
+}
+
+.user-box a:hover {
+text-decoration: underline;
+}
+
+/* Botões de logout e ver vendas */
+.user-box button {
+background-color: #FFD700;
+color: #2f0038;
+border: none;
+padding: 8px 15px;
+font-size: 1em;
+margin-left: 10px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.user-box button:hover {
+background-color: #ffcc00;
+}
+    </style>
+</head>
+<body>
+
+    <div class="user-box">
+        <span>Bem-vindo, Vendedor</span>
+        <button onclick="window.location.href='vendas.html'">Meus anúncios</button>
+        <button onclick="logout()">Sair</button>
+    </div>
+
+   
+
+    <script>
+        function logout() {
+           
+            
+            localStorage.removeItem('user'); 
+            alert("Você saiu da conta!");
+            window.location.href = 'site.html'; 
+        }
+    </script>
+    <div class="header">
+        <h1>Detalhes do Produto</h1>
+    </div>
+
+
+    <div class="product-container">
+        
+        <div class="product-image">
+            <img src="https://mobiliadequada.com.br/wp-content/uploads/2022/11/1-Sofa-Costume-SITE.png" alt="Imagem do Produto">
+        </div>
+
+        <div class="product-details">
+            <h2>Sofá </h2>
+            <div class="product-description">
+                <p>Sofá em belas condições, somente 2 anos de uso.</p>
+                <p>Este sofá usado, de cor bege claro, oferece excelente conforto e estilo para sua casa. Feito com tecido de alta qualidade, é fácil de limpar e manter. Com um tamanho de 2x1, ele acomoda confortavelmente até 4 pessoas, sendo perfeito para salas de estar de médio a grande porte. Seu design apresenta almofadas macias e uma estrutura firme, proporcionando ótimo apoio. Apesar de ser um produto usado, está em excelente estado de conservação, com acabamento em couro sintético e suporte reforçado, garantindo durabilidade. A venda se deve à troca por um novo modelo, sendo uma ótima oportunidade para quem busca qualidade a um preço acessível.
+
+
+
+                </p>
+            </div>
+            <div class="product-price">
+                <p>Preço: R$ 200,00</p>
+            </div>
+
+            
+            <div class="product-contact">
+                <p><strong>Contato:</strong> vendedor@loja.com.br</p>
+                <a href="https://wa.me/5511912345678" target="_blank" class="whatsapp-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
+                    Fale Com o Vendedor
+                </a>
+            </div>
+
+            <a href="bemvindo.html" class="back-button">Voltar para a lista de produtos</a>
+        </div>
+    </div>
+
+</body>
+</html>

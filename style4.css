@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #2f0038;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.product-card {
+    width: 30%;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+}
+.product-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+.product-card h3 {
+    margin: 10px 0;
+    color: #2f0038;
+}
+.product-card p {
+    font-size: 1em;
+    color: #333;
+}
+.product-card .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff0000;
+    
+}
+.product-card .buttons {
+    margin-top: 10px;
+}
+.product-card .buttons button {
+    background-color: #FFD700;
+    color: #2f0038;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.product-card .buttons button:hover {
+    background-color: #ffcc00;
+}
+.back-button {
+    background-color: #2f0038;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.back-button a {
+    color: #fff;
+    text-decoration: none;
+}
+.back-button:hover {
+    background-color: #3d1f5b;
+}
+
+.modal {
+    display: none; /* Inicialmente escondida */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal input, .modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal button {
+    background-color: #FFD700;
+    color: #2f0038;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal button:hover {
+    background-color: #ffcc00;
+}
+.user-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #2f0038;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.user-box a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.user-box a:hover {
+    text-decoration: underline;
+}
+
+
+.user-box button {
+    background-color: #FFD700;
+    color: #2f0038;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1em;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.user-box button:hover {
+    background-color: #ffcc00;
+}
+.cadastro-button {
+    background-color: #2f0038;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cadastro-button a {
+    color: #fff;
+    text-decoration: none;
+}
+.cadastro-button:hover {
+    background-color: #3d1f5b;
+}

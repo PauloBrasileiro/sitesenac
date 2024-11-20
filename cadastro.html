@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Cadastrar Produto</h1>
+    </div>
+
+    <div class="form-container">
+        <h2>Preencha os Dados</h2>
+        <form action="#" method="POST">
+            <label for="product-name">Nome do Produto:</label>
+            <input type="text" id="product-name" name="product-name" placeholder="Digite o nome do produto" required>
+
+            <label for="product-description">Descrição:</label>
+            <textarea id="product-description" name="product-description" placeholder="Descreva o produto" rows="5" required></textarea>
+
+            <label for="product-price">Preço (R$):</label>
+            <input type="number" id="product-price" name="product-price" placeholder="Digite o preço" step="0.01" required>
+           
+            <label for="product-image">Imagem do Produto:</label>
+            <input type="file" id="product-image" name="product-image" accept="image/*" required>
+
+            <label for="product-name">Email para contato:</label>
+            <input type="email" id="product-email" name="product-name" placeholder="Digite o email" required>
+            
+
+            <label for="product-name">Whatsapp para contato:</label>
+            <input type="text" id="product-name" name="product-name" placeholder="Digite o contato" required>
+
+
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+    </div>
+    <div class="back-button-container">
+        <button onclick="history.back()">Voltar</button>
+    </div>
+    
+</body>
+</html>

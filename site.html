@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vende Tudo</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="banner">
+        Vende Tudo
+    </div>
+    <div class="container">
+       
+        <div class="form-container" id="loginFormContainer">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Usuário" required><br>
+                <input type="password" id="password" placeholder="Senha" required><br>
+                <p class="error-message" id="loginErrorMessage" style="display: none;">Usuário ou senha incorretos!</p>
+                <button type="submit">Entrar</button>
+            </form>
+            <div class="toggle-form">
+                <p>Ainda não tem uma conta? <a href="#" id="showSignupForm">Cadastre-se</a></p>
+            </div>
+        </div>
+
+        
+        <div class="form-container" id="signupFormContainer" style="display: none;">
+            <h2>Cadastro</h2>
+            <form id="signupForm">
+                <input type="text" id="signupName" placeholder="Nome Completo" required><br>
+                <input type="email" id="signupEmail" placeholder="E-mail" required><br>
+                <input type="text" id="signupCond" placeholder="Condomínio" required><br>
+                <input type="text" id="signupblapp" placeholder="Bloco/Apartamento" required><br>
+                <input type="password" id="signupPassword" placeholder="Senha" required><br>
+                <input type="password" id="signupConfirmPassword" placeholder="Confirmar Senha" required><br>
+                <p class="error-message" id="signupErrorMessage" style="display: none;">As senhas não coincidem!</p>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div class="toggle-form">
+                <p>Já tem uma conta? <a href="#" id="showLoginForm">Entrar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+ 
+        document.getElementById('showSignupForm').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loginFormContainer').style.display = 'none';
+            document.getElementById('signupFormContainer').style.display = 'block';
+        });
+
+        document.getElementById('showLoginForm').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('signupFormContainer').style.display = 'none';
+            document.getElementById('loginFormContainer').style.display = 'block';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var loginErrorMessage = document.getElementById('loginErrorMessage');
+
+            var validUsername = 'Vendedor';
+            var validPassword = 'senha123';
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = 'bemvindo.html';
+            } else {
+                loginErrorMessage.style.display = 'block';
+            }
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('signupName').value.trim();
+            var email = document.getElementById('signupEmail').value.trim();
+            var password = document.getElementById('signupPassword').value.trim();
+            var confirmPassword = document.getElementById('signupConfirmPassword').value.trim();
+            var signupErrorMessage = document.getElementById('signupErrorMessage');
+
+            if (password !== confirmPassword) {
+                signupErrorMessage.style.display = 'block';
+            } else {
+                alert('Cadastro realizado com sucesso!');
+                document.getElementById('signupForm').reset();
+                document.getElementById('signupFormContainer').style.display = 'none';
+                document.getElementById('loginFormContainer').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Vendas</title>
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="user-box">
+        <span>Bem-vindo, Vendedor</span>
+        <button onclick="logout()">Sair</button>
+    </div>
+
+   
+
+    <script>
+        function logout() {
+           
+            
+            localStorage.removeItem('user'); 
+            alert("Você saiu da conta!");
+            window.location.href = 'site.html'; 
+        }
+    </script>
+    <div class="container">
+        <h1>Meus Anúncios</h1>
+
+        
+        <div class="product-list" id="productList">
+            
+        </div>
+
+        
+        <div class="back-button">
+            <a href="bemvindo.html">Voltar para a Página de Vendas</a>
+        </div>
+        <div class="cadastro-button">
+            <a href="cadastro.html">Cadastrar Produto</a>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Editar Produto</h2>
+            <form id="editForm">
+                <label for="productName">Nome do Produto</label>
+                <input type="text" id="productName" required><br>
+
+                <label for="productDesc">Descrição</label>
+                <textarea id="productDesc" required></textarea><br>
+
+                <label for="productPrice">Preço</label>
+                <input type="number" id="productPrice" step="0.01" required><br>
+
+                <label for="productImage">Imagem URL</label>
+                <input type="text" id="productImage" required><br>
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const produtos = [
+            {
+                nome: "Sofá Usado",
+                descricao: "Este sofá usado, de cor bege claro, oferece excelente conforto e estilo para sua casa. Feito com tecido de alta qualidade, é fácil de limpar e manter. Com um tamanho de 2x1, ele acomoda confortavelmente até 4 pessoas, sendo perfeito para salas de estar de médio a grande porte. Seu design apresenta almofadas macias e uma estrutura firme, proporcionando ótimo apoio. Apesar de ser um produto usado, está em excelente estado de conservação, com acabamento em couro sintético e suporte reforçado, garantindo durabilidade. A venda se deve à troca por um novo modelo, sendo uma ótima oportunidade para quem busca qualidade a um preço acessível.",
+                preco: 200.00,
+                imagem: "https://mobiliadequada.com.br/wp-content/uploads/2022/11/1-Sofa-Costume-SITE.png",
+                id: 1
+            },
+            {
+                nome: "Pc Gamer Completo",
+                descricao: "Computador gamer, com 1 ano de uso",
+                preco: 2500.00,
+                imagem: "https://images.tcdn.com.br/img/img_prod/486750/computador_gamer_tob_core_i7_ssd_480gb_16gb_vga_gt740_2gb_windows_10_pro_trial_teclado_mouse_mouse_p_7789_1_289b1138e08753bbd4739c30f3e5a4c8.png",
+                id: 2
+            },
+            {
+                nome: "Dog Walker",
+                descricao: "Passeando com o seu cachorro !",
+                preco: 59.90,
+                imagem: "https://i0.statig.com.br/bancodeimagens/50/4b/98/504b98g88z9op4w0rgd8q2i98.jpg",
+                id: 3
+            }
+        ];
+
+        
+        function displayProducts() {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+
+            produtos.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.innerHTML = `
+                    <img src="${product.imagem}" alt="${product.nome}">
+                    <h3>${product.nome}</h3>
+                    <p>${product.descricao}</p>
+                    <p class="price">R$ ${product.preco.toFixed(2)}</p>
+                    <div class="buttons">
+                        <button onclick="editProduct(${product.id})">Editar</button>
+                        <button onclick="deleteProduct(${product.id})">Excluir</button>
+                    </div>
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+
+       
+        function editProduct(productId) {
+            const product = produtos.find(p => p.id === productId);
+
+           
+            document.getElementById('productName').value = product.nome;
+            document.getElementById('productDesc').value = product.descricao;
+            document.getElementById('productPrice').value = product.preco;
+            document.getElementById('productImage').value = product.imagem;
+
+           
+            document.getElementById('editModal').style.display = 'block';
+
+            
+            document.getElementById('editForm').onsubmit = function(event) {
+                event.preventDefault();
+
+                product.nome = document.getElementById('productName').value;
+                product.descricao = document.getElementById('productDesc').value;
+                product.preco = parseFloat(document.getElementById('productPrice').value);
+                product.imagem = document.getElementById('productImage').value;
+
+                alert('Produto atualizado com sucesso!');
+                displayProducts(); 
+                closeModal(); 
+            };
+        }
+
+        
+        function closeModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        
+        function deleteProduct(productId) {
+            const confirmDelete = confirm('Tem certeza que deseja excluir este produto?');
+            if (confirmDelete) {
+                const index = produtos.findIndex(product => product.id === productId);
+                if (index !== -1) {
+                    produtos.splice(index, 1); 
+                    alert('Produto excluído com sucesso!');
+                    displayProducts(); 
+                }
+            }
+        }
+
+        window.onload = displayProducts;
+
+        
+        document.getElementById('closeModal').onclick = closeModal;
+
+        
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('editModal')) {
+                closeModal();
+            }
+        };
+    </script>
+
+</body>
+</html>

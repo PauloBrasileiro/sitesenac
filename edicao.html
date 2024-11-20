@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2f0038;
+        }
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .product-info label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .product-info input, .product-info textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #FFD700;
+            color: #2f0038;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #ffcc00;
+        }
+        .back-button {
+            background-color: #2f0038;
+            color: #fff;
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #3d1f5b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Editar Produto Anunciado</h1>
+
+        <!-- Informações do Produto -->
+        <div class="product-info">
+            <label for="productName">Nome do Produto</label>
+            <input type="text" id="productName" value="Sofá Usado - Conforto e Estilo" />
+
+            <label for="productDescription">Descrição</label>
+            <textarea id="productDescription" rows="5">Sofá usado, de cor cinza claro, feito com tecido de alta qualidade, ideal para salas de estar.</textarea>
+
+            <label for="productPrice">Preço (R$)</label>
+            <input type="number" id="productPrice" value="499.99" />
+
+            <label for="productImage">Link da Imagem</label>
+            <input type="text" id="productImage" value="https://via.placeholder.com/300" />
+
+            <button id="updateProduct">Atualizar Produto</button>
+        </div>
+
+        <!-- Botão de Voltar -->
+        <div class="back-button">
+            <a href="pagina_de_vendas.html">Voltar para a Página de Vendas</a>
+        </div>
+    </div>
+
+    <script>
+        // Função de Atualização do Produto
+        document.getElementById('updateProduct').addEventListener('click', function() {
+            const productName = document.getElementById('productName').value;
+            const productDescription = document.getElementById('productDescription').value;
+            const productPrice = document.getElementById('productPrice').value;
+            const productImage = document.getElementById('productImage').value;
+
+            // Aqui você pode adicionar a lógica para salvar as alterações no backend ou localStorage, por exemplo.
+            alert(`Produto "${productName}" atualizado com sucesso!`);
+        });
+    </script>
+
+</body>
+</html>

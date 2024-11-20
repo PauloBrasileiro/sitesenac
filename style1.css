@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d4d4d4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Banner de "Vende Tudo" */
+.banner {
+    background-color: #2f0038;
+    color: white;
+    padding: 20px;
+    font-size: 150px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Formulário de Login */
+.login-container {
+    margin-top: 50px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: auto;
+}
+
+.form-container input {
+    width: 305px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container button {
+    background-color: #2f0038;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #4a005a;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.toggle-form a {
+    color: #2f0038;
+    text-decoration: none;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
